@@ -109,10 +109,15 @@ gulp.task('dev', ['sync'], function (done) {
 });
 
 gulp.task('test', ['sync'], function(done) {
-  spawn('grunt', ['test:dev'], {
+  spawn('grunt', ['test:browser', '--grep=Kibi Word Cloud'], {
     cwd: '../kibana',
     stdio: 'inherit'
   }).on('close', done);
 });
 
-
+gulp.task('coverage', ['sync'], function(done) {
+  spawn('grunt', ['test:coverage', '--grep=Kibi Word Cloud'], {
+    cwd: '../kibana',
+    stdio: 'inherit'
+  }).on('close', done);
+});
