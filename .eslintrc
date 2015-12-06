@@ -7,10 +7,6 @@ env:
   node: true
   browser: true
   mocha: true
-  jasmine: true
-
-globals:
-  inject: true
 
 rules:
   block-scoped-var: 2
